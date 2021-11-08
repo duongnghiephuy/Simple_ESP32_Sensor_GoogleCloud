@@ -14,7 +14,7 @@ To get SSL certificate, download the primary and backup certificate from https:/
 openssl x509 -inform DER -in gtsltsr.crt -out primary.pem -text
 openssl x509 -inform DER -in GSR4.crt -out secondary.pem -text
 ```
-Run commands to convert the file and copy content from both files to `root_cert` in 'ciotc_config.h". Or you can just copy certificate from my example. 
+Run commands to convert the file and copy content from both files to `root_cert` in `ciotc_config.h`. Or you can just copy certificate from my example. 
 
 In the google-cloud-iot-arduino library, the certificate is not used to establish connection so you might face problem: `setting missing SSL or wrong configuration`. 
 
