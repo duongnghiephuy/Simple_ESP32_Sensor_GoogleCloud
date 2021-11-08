@@ -19,11 +19,32 @@ Run commands to convert the file and copy content from both files to `root_cert`
 
 In the google-cloud-iot-arduino library, the certificate is not used to establish connection so you might face problem: `Settings incorrect or missing a cyper for SSL`. 
 
-The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 in `esp32-mqtt.h`. 
+The fix I used is to change `netClient` class to `WiFiClientSecure` 
+- In `esp32-mqtt.h` (line 36)
+- In `CloudIoTCoreMqtt.cpp` (line 27) 
+- In `CloudIoTMqtt.h` (line 36, 40) 
 
-Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoTMqtt.h` (line 36, 40) then `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
+Then `#include <WiFiClientSecure.h>` in `CloudIoTMqtt.h`. 
 
-In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `netClient->setCACert(root_cert)` 
+In `esp32-mqtt.h`, set certificate
+```
+void setupCloudIoT()
+{
+  device = new CloudIoTCoreDevice(
+      project_id, location, registry_id, device_id,
+      private_key_str);
+
+  setupWifi();
+  netClient = new WiFiClientSecure();
+  netClient->setCACert(root_cert); //  Set certificate
+
+  mqttClient = new MQTTClient(512);
+  mqttClient->setOptions(180, true, 1000); // keepAlive, cleanSession, timeout
+  mqtt = new CloudIoTCoreMqtt(mqttClient, netClient, device);
+  mqtt->setUseLts(true);
+  mqtt->startMQTT();
+}
+```
 ## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
 ![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
 
