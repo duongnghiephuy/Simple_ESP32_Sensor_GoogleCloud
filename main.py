@@ -18,7 +18,7 @@ def iotcore_pubsub_to_influxdb(event, context):
   	bucket = "<bucket-name>" 
   
 
-	client=InfluxDBClient(url="https://europe-west1-1.gcp.cloud2.influxdata.com", token=token, org=org)
+	client=InfluxDBClient(url="<url>", token=token, org=org)
 
   	pubsub_message = base64.b64decode(event['data']).decode('utf-8')
   	iot_data = json.loads(pubsub_message)
