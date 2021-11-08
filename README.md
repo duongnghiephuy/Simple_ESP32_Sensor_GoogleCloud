@@ -18,9 +18,9 @@ Run commands to convert the file and copy content from both files to `root_cert`
 
 In the google-cloud-iot-arduino library, the certificate is not used to establish connection so you might face problem: `setting missing SSL or wrong configuration`. 
 
-The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 in esp32-mqtt.h. 
+The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 in `esp32-mqtt.h`. 
 
-Similar changes should be made in `CloudIoTCoreMqtt.cpp` and `CloudIoTMqtt.h` (line 36, 40, line 27) and `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
+Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoTMqtt.h` (line 36, 40) and `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
 
 In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `netClient->setCACert(root_cert)` 
 ## Visualization of data can be achieved with Firebase or InFluxDB
