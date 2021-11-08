@@ -9,7 +9,7 @@ This example is based on library [google-cloud-iot-arduino](https://github.com/G
 ## Wifi connection 
 If you're using Wifi router with both 2.4GHz and 5GHz, do a wifi scan on ESP32 first to check your exact SSID. Your SSID should not have any space.
 ## SSL certificate
-To get SSL certificate, download the primary and backup certificate from https://cloud.google.com/iot/docs/how-tos/mqtt-bridge#downloading_mqtt_server_certificates. 
+To get SSL certificate, download the primary and backup certificate from https://cloud.google.com/iot/docs/how-tos/mqtt-bridge#downloading_mqtt_server_certificates (Google's minimal root CA set (<1 KB) for mqtt.2030.ltsapis.goog)
 ```
 openssl x509 -inform DER -in gtsltsr.crt -out primary.pem -text
 openssl x509 -inform DER -in GSR4.crt -out secondary.pem -text
