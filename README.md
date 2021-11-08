@@ -4,6 +4,7 @@ ESP32 sending sensor's reading (Hall sensor) to Google Cloud IoT via MQTT
 The Hall sensor measures magnetic field perpendicular to its location on ESP32 board. Framwork: Arduino. The project is built in PlatformIO.
 
 I'm using [google-cloud-iot-arduino](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino) and structure it to build in Platform IO. 
+`main.py` and `requirements.txt` are only for later visualization using Cloud Function (not for programming ESP32)
 
 # Note: problems I faced 
 ## Wifi connection 
