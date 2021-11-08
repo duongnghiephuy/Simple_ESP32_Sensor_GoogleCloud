@@ -26,6 +26,13 @@ In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `net
 ## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
 ![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
 
+In this case, I let Cloud Function be triggered by pub/sub then call InFluxDB. 
+1. Create InFluxDB account 
+2. Create a bucket 
+3. Generate API Token of that bucket
+4. Create a Cloud Function
+5. Modify `main.py` in Cloud Function as in my example
+
 
 
 
