@@ -13,9 +13,9 @@ def iotcore_pubsub_to_influxdb(event, context):
 	kind='hallsensor'
   	host = 'host1'
   	device= 'esp32-1'
-  	token = "w8lvjmIYvvmTwg7GLMnj6308QlJI4L6G7OcxjfnJl7au1F_wT5bAxFp-Y_RmO10cRJbK4KYc3hxHLvG9nDvJyA=="
-  	org = "duongnghiephuy123@gmail.com"
-  	bucket = "iotcore Bucket"
+  	token = "<token>" (eg: "w8lvjmIYvvmTwg7GLMnj6308QlJI4L6G7OcxjfnJl7au1F_wT5bAxFp-Y_RmO10cRJbK4KYc3hxHLvG9nDvJyB==")
+  	org = "<org>"
+  	bucket = "<bucket-name>" 
   
 
 	client=InfluxDBClient(url="https://europe-west1-1.gcp.cloud2.influxdata.com", token=token, org=org)
