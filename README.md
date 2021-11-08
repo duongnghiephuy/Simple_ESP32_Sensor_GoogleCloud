@@ -35,6 +35,7 @@ In this case, I let Cloud Function be triggered by pub/sub then call InFluxDB.
 6. Include `influxdb-client` in `requirements.txt`
 
 There are many ways to conduct steps 4,5,6. The easiest way is to use Console UI. 
+Finally, open InfluxDB, choose your bucket, value field and push `SUBMIT` to see the visualization.
 
 
 
