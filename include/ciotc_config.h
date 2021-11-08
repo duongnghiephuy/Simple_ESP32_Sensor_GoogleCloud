@@ -15,13 +15,13 @@
 // This file contains your configuration used to connect to Cloud IoT Core
 
 // Wifi network details.
-const char *ssid = "238_J39F";
-const char *password = "m2ifhvnx";
+const char *ssid = "SSID";
+const char *password = "PASSWORD";
 
 // Cloud iot details.
-const char *project_id = "absolute-router-331401";
+const char *project_id = "project_id";
 const char *location = "asia-east1";
-const char *registry_id = "iotcore_registry";
+const char *registry_id = "registry_id";
 const char *device_id = "esp32";
 
 // Configuration for NTP
