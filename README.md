@@ -32,6 +32,7 @@ In this case, I let Cloud Function be triggered by pub/sub then call InFluxDB.
 3. Generate API Token of that bucket
 4. Create a Cloud Function
 5. Modify `main.py` in Cloud Function as in my example
+6. Include `influxdb-client` in `requirements.txt`
 
 
 
