@@ -20,7 +20,7 @@ In the google-cloud-iot-arduino library, the certificate is not used to establis
 
 The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 in `esp32-mqtt.h`. 
 
-Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoTMqtt.h` (line 36, 40) and `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
+Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoTMqtt.h` (line 36, 40) then `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
 
 In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `netClient->setCACert(root_cert)` 
 ## Visualization of data can be achieved with Firebase or InFluxDB
