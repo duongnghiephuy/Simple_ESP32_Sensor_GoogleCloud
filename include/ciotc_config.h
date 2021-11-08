@@ -39,7 +39,7 @@ const char *ntp_secondary = "time.nist.gov";
 const char *private_key_str =
     "84:b7:f8:06:0b:19:4e:21:bd:f0:d1:da:33:39:a4:"
     "37:49:f2:a0:dc:e8:35:b1:9c:ee:d5:0c:9a:2d:43:"
-    "4c:32";
+    "4c:31";
 
 // Time (seconds) to expire token += 20 minutes for drift
 const int jwt_exp_secs = 60 * 20; // Maximum 24H (3600*24)
