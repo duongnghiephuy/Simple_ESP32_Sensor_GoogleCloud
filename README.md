@@ -3,7 +3,7 @@ ESP32 sending sensor's reading (Hall sensor) to Google Cloud IoT via MQTT
 
 The Hall sensor measures magnetic field perpendicular to its location on ESP32 board. Framwork: Arduino. The project is built in PlatformIO.
 
-This example is based on library [google-cloud-iot-arduino](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino) and structured to play nicely alongside Platform IO. 
+I'm using [google-cloud-iot-arduino](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino) and structure it to build in Platform IO. 
 
 # Note: problems I faced 
 ## Wifi connection 
@@ -14,9 +14,9 @@ To get SSL certificate, download the primary and backup certificate from https:/
 openssl x509 -inform DER -in gtsltsr.crt -out primary.pem -text
 openssl x509 -inform DER -in GSR4.crt -out secondary.pem -text
 ```
-Run commands to convert the file and copy content from both files to `root_cert` in `ciotc_config.h`. Or you can just copy certificate from my example. 
+Run commands to convert the file and copy content from both files to `root_cert` in `ciotc_config.h`. Or you can just copy certificate from my example (include/ciotc_config.h). 
 
-In the google-cloud-iot-arduino library, the certificate is not used to establish connection so you might face problem: `setting missing SSL or wrong configuration`. 
+In the google-cloud-iot-arduino library, the certificate is not used to establish connection so you might face problem: `Settings incorrect or missing a cyper for SSL`. 
 
 The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 in `esp32-mqtt.h`. 
 
