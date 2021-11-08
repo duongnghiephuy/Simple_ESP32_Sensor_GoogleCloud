@@ -24,7 +24,7 @@ Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoT
 
 In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `netClient->setCACert(root_cert)` 
 ## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
-![image](https://user-images.githubusercontent.com/55075721/140731378-5707e007-fffa-4252-804e-4662e824927c.png)
+![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
 
 
 
