@@ -23,7 +23,7 @@ The fix I used is to change `netClient` class to `WiFiClientSecure` in line 36 i
 Similar changes should be made in `CloudIoTCoreMqtt.cpp` (line 27) and `CloudIoTMqtt.h` (line 36, 40) then `include <WiFiSecureClient.h>` in `CloudIoTMqtt.h`. 
 
 In `ciotc_config.h`, set certificate in `void setupCloudIoT()` by inserting `netClient->setCACert(root_cert)` 
-## Visualization of data can be achieved with Firebase or InFluxDB
+## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
 
 
 
