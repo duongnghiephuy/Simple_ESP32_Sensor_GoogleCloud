@@ -6,6 +6,20 @@ The Hall sensor measures magnetic field perpendicular to its location on ESP32 b
 I'm using [google-cloud-iot-arduino](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino) and structure it to build in Platform IO. 
 `main.py` and `requirements.txt` are only for later visualization using Cloud Function (not for programming ESP32)
 
+## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
+![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
+
+In this case, I let Cloud Function be triggered by pub/sub then call InFluxDB. 
+1. Create InFluxDB account 
+2. Create a bucket 
+3. Generate API Token of that bucket
+4. Create a Cloud Function triggered by pub/sub
+5. Modify `main.py` in Cloud Function as in my example
+6. Include `influxdb-client` in `requirements.txt`
+
+There are many ways to conduct steps 4,5,6. The easiest way is to use Console UI. 
+
+Finally, open InfluxDB, choose your bucket, value field and push `SUBMIT` to see the visualization.
 # Note: problems I faced 
 ## Wifi connection 
 If you're using Wifi router with both 2.4GHz and 5GHz, do a wifi scan on ESP32 first to check your exact SSID. Your SSID should not have any space.
@@ -45,20 +59,7 @@ void setupCloudIoT()
   mqtt->startMQTT();
 }
 ```
-## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
-![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
 
-In this case, I let Cloud Function be triggered by pub/sub then call InFluxDB. 
-1. Create InFluxDB account 
-2. Create a bucket 
-3. Generate API Token of that bucket
-4. Create a Cloud Function triggered by pub/sub
-5. Modify `main.py` in Cloud Function as in my example
-6. Include `influxdb-client` in `requirements.txt`
-
-There are many ways to conduct steps 4,5,6. The easiest way is to use Console UI. 
-
-Finally, open InfluxDB, choose your bucket, value field and push `SUBMIT` to see the visualization.
 
 
 
