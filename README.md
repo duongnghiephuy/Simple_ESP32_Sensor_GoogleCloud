@@ -6,6 +6,8 @@ The Hall sensor measures magnetic field perpendicular to its location on ESP32 b
 I'm using [google-cloud-iot-arduino](https://github.com/GoogleCloudPlatform/google-cloud-iot-arduino) and structure it to build in Platform IO. 
 `main.py` and `requirements.txt` are only for later visualization using Cloud Function (not for programming ESP32)
 
+I hope anyone find this documentation helpful :smiley:.
+
 ## Visualization of data can be achieved with Firebase or InFluxDB integrated with Cloud Function
 ![image](https://user-images.githubusercontent.com/55075721/140731627-f4d5f54f-49ae-460a-8735-443c0574ecc3.png)
 
